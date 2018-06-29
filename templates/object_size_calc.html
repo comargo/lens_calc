@@ -1,7 +1,7 @@
-{% extends "_base.html" %}
-{% block title %}Вычисление размера объекта{% endblock %} 
+{% extends "_calc.html" %}
+{% block title %}Вычисление размера объекта{% endblock %}
 
-{% block content %}
+{% block calc_input %}
 <form id="object_size_calc-input" class="mb-5">
     <div class="form-group">
         <label for="osc-focal_len">Фокусное расстояние объектива</label>
@@ -43,10 +43,12 @@
                 <option value="22">22mm</option>
                 <option value="43">43mm</option>
             </select>
-            <input type="number" name="matrix_format_width" id="osc-matrix_format-width" class="form-control col-2" placeholder="Ширина"
-                step="0.01">
-            <input type="number" name="matrix_format_height" id="osc-matrix_format-height" class="form-control col-2" placeholder="Высота"
-                step="0.01">
+            <input type="number" name="matrix_format_width" id="osc-matrix_format-width" class="form-control"
+                   placeholder="Ширина"
+                   step="0.01">
+            <input type="number" name="matrix_format_height" id="osc-matrix_format-height" class="form-control"
+                   placeholder="Высота"
+                   step="0.01">
             <div class="input-group-append">
                 <span class="input-group-text">мм</span>
             </div>
@@ -81,15 +83,19 @@
                 <option value="5120x5120">5120x5120</option>
                 <option value="6600x4400">6600x4400</option>
             </select>
-            <input type="number" name="resolution_width" id="osc-resolution-width" class="form-control col-2" placeholder="Ширина">
-            <input type="number" name="resolution_height" id="osc-resolution-height" class="form-control col-2" placeholder="Высота">
+            <input type="number" name="resolution_width" id="osc-resolution-width" class="form-control"
+                   placeholder="Ширина">
+            <input type="number" name="resolution_height" id="osc-resolution-height" class="form-control"
+                   placeholder="Высота">
             <div class="input-group-append">
-                <span class="input-group-text">пикселей</span>
+                <span class="input-group-text">px</span>
             </div>
         </div>
     </div>
     <input class="form-control btn btn-primary" type="submit" value="Рассчитать">
 </form>
+{% endblock %}
+{% block calc_output %}
 <form id="object_size_calc-output">
     <div class="form-group">
         <label for="osc-minimum_object_size">Минимальный размер обнаруживаемого объекта</label>
@@ -179,6 +185,8 @@ document.getElementById('object_size_calc-input').addEventListener("submit", fun
     fov_width = Math.round10(2*Math.atan((maximum_visible_area_width/2)/distance)*180/Math.PI, -2)
     fov_height = Math.round10(2*Math.atan((maximum_visible_area_width)/2/distance)*180/Math.PI, -2)
     form_out.maximum_fov.value = Math.max(fov_width, fov_height)
+
+    form_out.scrollIntoView({behavior: "smooth", block: "start"})
 })
 </script>
 {% endblock %}

@@ -1,0 +1,13 @@
+{% extends "_base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-sm">
+        {% block calc_input %}
+        {% endblock %}
+    </div>
+    <div class="col-sm-4">
+        {% block calc_output %}
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}

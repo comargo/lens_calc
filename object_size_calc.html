@@ -2,26 +2,30 @@
 <html lang="ru">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-    crossorigin="anonymous">
-  <title>Вычисление размера объекта</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+          crossorigin="anonymous">
+    <title>Вычисление размера объекта</title>
 </head>
 
 <body>
-  <div class="container">
+<div class="container-fluid">
     <ul class="nav nav-tabs" id="calculator-nav" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" href="object_size_calc.html">Вычисление размера объекта</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="focal_length_calc.html">Вычисление фокусного расстояния</a>
-      </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="object_size_calc.html">Вычисление размера объекта</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="focal_length_calc.html">Вычисление фокусного расстояния</a>
+        </li>
     </ul>
     
+<div class="row">
+    <div class="col-sm">
+        
 <form id="object_size_calc-input" class="mb-5">
     <div class="form-group">
         <label for="osc-focal_len">Фокусное расстояние объектива</label>
@@ -63,10 +67,12 @@
                 <option value="22">22mm</option>
                 <option value="43">43mm</option>
             </select>
-            <input type="number" name="matrix_format_width" id="osc-matrix_format-width" class="form-control col-2" placeholder="Ширина"
-                step="0.01">
-            <input type="number" name="matrix_format_height" id="osc-matrix_format-height" class="form-control col-2" placeholder="Высота"
-                step="0.01">
+            <input type="number" name="matrix_format_width" id="osc-matrix_format-width" class="form-control"
+                   placeholder="Ширина"
+                   step="0.01">
+            <input type="number" name="matrix_format_height" id="osc-matrix_format-height" class="form-control"
+                   placeholder="Высота"
+                   step="0.01">
             <div class="input-group-append">
                 <span class="input-group-text">мм</span>
             </div>
@@ -101,15 +107,21 @@
                 <option value="5120x5120">5120x5120</option>
                 <option value="6600x4400">6600x4400</option>
             </select>
-            <input type="number" name="resolution_width" id="osc-resolution-width" class="form-control col-2" placeholder="Ширина">
-            <input type="number" name="resolution_height" id="osc-resolution-height" class="form-control col-2" placeholder="Высота">
+            <input type="number" name="resolution_width" id="osc-resolution-width" class="form-control"
+                   placeholder="Ширина">
+            <input type="number" name="resolution_height" id="osc-resolution-height" class="form-control"
+                   placeholder="Высота">
             <div class="input-group-append">
-                <span class="input-group-text">пикселей</span>
+                <span class="input-group-text">px</span>
             </div>
         </div>
     </div>
     <input class="form-control btn btn-primary" type="submit" value="Рассчитать">
 </form>
+
+    </div>
+    <div class="col-sm-4">
+        
 <form id="object_size_calc-output">
     <div class="form-group">
         <label for="osc-minimum_object_size">Минимальный размер обнаруживаемого объекта</label>
@@ -140,15 +152,22 @@
     </div>
 </form>
 
+    </div>
+</div>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-      crossorigin="anonymous"></script>
-    <script>
+</div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+<script>
       (function(){
         var nav = document.getElementById("calculator-nav");
         var links = nav.getElementsByClassName("nav-link");
@@ -162,8 +181,9 @@
         }
       })()
 
-    </script>
-    
+
+</script>
+
 <script src="round10.js"></script>
 <script src="constants.js"></script>
 <script>
@@ -195,6 +215,8 @@
         element.dispatchEvent(changeEvent);
     }
 })();
+
+
 </script>
 <script>
 document.getElementById('object_size_calc-input').addEventListener("submit", function (e) {
@@ -221,7 +243,11 @@ document.getElementById('object_size_calc-input').addEventListener("submit", fun
     fov_width = Math.round10(2*Math.atan((maximum_visible_area_width/2)/distance)*180/Math.PI, -2)
     fov_height = Math.round10(2*Math.atan((maximum_visible_area_width)/2/distance)*180/Math.PI, -2)
     form_out.maximum_fov.value = Math.max(fov_width, fov_height)
+
+    form_out.scrollIntoView({behavior: "smooth", block: "start"})
 })
+
+
 </script>
 
 </body>
