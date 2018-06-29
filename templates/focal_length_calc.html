@@ -50,9 +50,9 @@
             <input type="number" name="fov_width" id="flc-fov_width" class="form-control" placeholder="">
             <div class="input-group-append">
                 <select class="form-control input-group-text" name="fov_width_unit" id="flc-fov_width_unit">
-                    <option>мм</option>
-                    <option>м</option>
-                    <option>км</option>
+                    <option value="1">мм</option>
+                    <option value="1000">м</option>
+                    <option value="1000000">км</option>
                 </select>
             </div>
         </div>
@@ -121,12 +121,12 @@
         this.matrix_format_width.value;
         this.matrix_format_height.value;
         var distance = this.distance.value * this.distance_unit.value;
-        this.fov_width.value;
+        var fov_width = this.fov_width.value * this.fov_width_unit.value;
 
         form_out = document.getElementById('focal_length_calc-output')
-        form_out.focal_len.value = Math.round10(distance / (this.fov_width.value / this.matrix_format_width.value + 1), -2);
+        form_out.focal_len.value = Math.round10(distance / (fov_width / this.matrix_format_width.value + 1), -2);
 
-        form_out.maximum_fov.value = Math.round10(2 * Math.atan((this.matrix_format_width.value / 2) / (distance * this.matrix_format_width.value / this.fov_width.value)) * 180 / Math.PI, -2)
+        form_out.maximum_fov.value = Math.round10(2 * Math.atan((this.matrix_format_width.value / 2) / (distance * this.matrix_format_width.value / fov_width)) * 180 / Math.PI, -2)
 
         form_out.scrollIntoView({behavior: "smooth", block: "start"})
     })
