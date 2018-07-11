@@ -178,8 +178,8 @@ document.getElementById('object_size_calc-input').addEventListener("submit", fun
     var maximum_visible_area_height = Math.round10(this.matrix_format_height.value*magnify,-2)
     form_out.maximum_visible_area.value = maximum_visible_area_width.toString()+" x "+maximum_visible_area_height.toString()
 
-    var minimum_object_size_width = Math.round10(maximum_visible_area_width/this.resolution_width.value,-2)
-    var minimum_object_size_height = Math.round10(maximum_visible_area_height/this.resolution_height.value,-2)
+    var minimum_object_size_width = Math.round10(maximum_visible_area_width/this.resolution_width.value,-4)
+    var minimum_object_size_height = Math.round10(maximum_visible_area_height/this.resolution_height.value,-4)
     form_out.minimum_object_size.value = minimum_object_size_width.toString()+" x "+minimum_object_size_height.toString()
 
     fov_width = Math.round10(2*Math.atan((maximum_visible_area_width/2)/distance)*180/Math.PI, -2)
