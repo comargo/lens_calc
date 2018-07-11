@@ -227,10 +227,10 @@ document.getElementById('object_size_calc-input').addEventListener("submit", fun
 
     form_out = document.getElementById('object_size_calc-output')
 
-    var magnify = (distance-this.focal_len.value)/this.focal_len.value
-    var maximum_visible_area_width = Math.round10(this.matrix_format_width.value*magnify,-2)
-    var maximum_visible_area_height = Math.round10(this.matrix_format_height.value*magnify,-2)
-    form_out.maximum_visible_area.value = maximum_visible_area_width.toString()+" x "+maximum_visible_area_height.toString()
+    var magnify = (distance-this.focal_len.value)/this.focal_len.value;
+    var maximum_visible_area_width = this.matrix_format_width.value*magnify;
+    var maximum_visible_area_height = this.matrix_format_height.value*magnify;
+    form_out.maximum_visible_area.value = Math.round10(maximum_visible_area_width,-2).toString()+" x "+Math.round10(maximum_visible_area_height,-2).toString()
 
     var minimum_object_size_width = Math.round10(maximum_visible_area_width/this.resolution_width.value,-4)
     var minimum_object_size_height = Math.round10(maximum_visible_area_height/this.resolution_height.value,-4)
